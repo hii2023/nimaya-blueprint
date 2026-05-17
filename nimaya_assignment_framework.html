@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nimaya Naari — Ahmedabad Launch Blueprint | Altaf Simavatwala</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:       #050714;
+  --bg1:      #0D1117;
+  --bg2:      #161B27;
+  --bg3:      #1E2535;
+  --border:   rgba(139,92,246,0.15);
+  --border2:  rgba(255,255,255,0.06);
+  --p1:       #7C3AED;
+  --p2:       #8B5CF6;
+  --p3:       #A78BFA;
+  --p4:       #C4B5FD;
+  --glow:     rgba(124,58,237,0.18);
+  --text:     #F1F5F9;
+  --muted:    #94A3B8;
+  --dim:      #64748B;
+  --green:    #34D399;
+  --greenBg:  rgba(52,211,153,0.08);
+  --greenBd:  rgba(52,211,153,0.2);
+  --red:      #F87171;
+  --redBg:    rgba(248,113,113,0.08);
+  --redBd:    rgba(248,113,113,0.2);
+  --orange:   #FB923C;
+  --blue:     #60A5FA;
+  --yellow:   #FBBF24;
+}
+
+html{scroll-behavior:smooth}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--p1);border-radius:3px}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  font-size:16px;
+  overflow-x:hidden;
+}
+
+/* ─── UTILITIES ─── */
+.container{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+section{padding:72px 0}
+.mono{font-family:'Fira Code',monospace}
+.tag{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(124,58,237,0.1);border:1px solid rgba(124,58,237,0.25);
+  border-radius:50px;padding:5px 14px;
+  font-size:11px;font-weight:600;color:var(--p4);letter-spacing:.08em;text-transform:uppercase;
+}
+.tag .dot{width:5px;height:5px;border-radius:50%;background:var(--p3)}
+.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border2),transparent)}
+
+/* ─── SECTION HEADERS ─── */
+.section-tag{
+  font-family:'Fira Code',monospace;font-size:11px;font-weight:500;
+  color:var(--p3);text-transform:uppercase;letter-spacing:.1em;margin-bottom:10px;
+}
+h2{font-size:clamp(24px,3.5vw,36px);font-weight:800;line-height:1.2;margin-bottom:12px;letter-spacing:-.02em}
+.section-desc{color:var(--muted);max-width:620px;margin-bottom:44px;font-size:15px;line-height:1.7}
+
+/* ─── NAVIGATION ─── */
+nav{
+  position:fixed;top:10px;left:50%;transform:translateX(-50%);
+  z-index:100;width:calc(100% - 40px);max-width:1100px;
+  background:rgba(5,7,20,0.88);border:1px solid var(--border2);
+  border-radius:14px;backdrop-filter:blur(24px);
+  padding:12px 24px;display:flex;align-items:center;justify-content:space-between;
+}
+.nav-brand{font-family:'Fira Code',monospace;font-size:12px;color:var(--p3);letter-spacing:.04em}
+.nav-links{display:flex;gap:4px}
+.nav-links a{
+  font-size:12px;color:var(--muted);text-decoration:none;
+  padding:6px 12px;border-radius:8px;cursor:pointer;
+  transition:color 150ms,background 150ms;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,0.06)}
+
+/* ─── HERO ─── */
+#hero{
+  padding:148px 0 88px;
+  background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(124,58,237,0.2),transparent);
+}
+h1{
+  font-size:clamp(32px,5.5vw,58px);font-weight:800;line-height:1.1;
+  letter-spacing:-.03em;margin-bottom:20px;
+  background:linear-gradient(135deg,#fff 20%,var(--p4) 65%,var(--p3) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{font-size:17px;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:8px}
+.hero-by{font-family:'Fira Code',monospace;font-size:12px;color:var(--p3);margin-bottom:48px}
+.stats-row{display:flex;flex-wrap:wrap;gap:32px}
+.stat{border-left:2px solid var(--p1);padding-left:16px}
+.stat-n{font-size:28px;font-weight:800;color:var(--p4);letter-spacing:-.02em;line-height:1}
+.stat-l{font-size:12px;color:var(--muted);margin-top:4px}
+
+/* ─── CARDS ─── */
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+
+.card{
+  background:var(--bg1);border:1px solid var(--border2);
+  border-radius:14px;padding:22px;
+  transition:border-color 200ms,transform 200ms,box-shadow 200ms;
+  cursor:default;
+}
+.card:hover{border-color:rgba(139,92,246,0.35);transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,0.1)}
+.card-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,rgba(124,58,237,0.22),rgba(139,92,246,0.1));
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;flex-shrink:0;
+}
+.card-icon svg{width:20px;height:20px;stroke:var(--p4);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.card-label{font-family:'Fira Code',monospace;font-size:10px;color:var(--p3);margin-bottom:6px;letter-spacing:.08em}
+.card h3{font-size:15px;font-weight:700;margin-bottom:7px}
+.card p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* ─── EXPANDABLE CARDS ─── */
+.expand-card{
+  background:var(--bg1);border:1px solid var(--border2);border-radius:14px;
+  overflow:hidden;margin-bottom:12px;
+  transition:border-color 200ms;
+}
+.expand-card.open{border-color:rgba(139,92,246,0.3)}
+.expand-header{
+  display:flex;align-items:center;gap:16px;padding:18px 22px;cursor:pointer;
+  transition:background 150ms;
+}
+.expand-header:hover{background:rgba(255,255,255,0.02)}
+.expand-num{
+  font-family:'Fira Code',monospace;font-size:10px;color:var(--p3);
+  min-width:36px;font-weight:600;
+}
+.expand-title-block{flex:1}
+.expand-title{font-size:15px;font-weight:700}
+.expand-subtitle{font-size:12px;color:var(--muted);margin-top:2px}
+.expand-arrow{
+  width:28px;height:28px;display:flex;align-items:center;justify-content:center;
+  border-radius:7px;background:rgba(255,255,255,0.04);
+  transition:transform 200ms,background 150ms;flex-shrink:0;
+}
+.expand-card.open .expand-arrow{transform:rotate(180deg);background:rgba(124,58,237,0.15)}
+.expand-arrow svg{width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.expand-body{display:none;padding:0 22px 22px;border-top:1px solid var(--border2)}
+.expand-card.open .expand-body{display:block}
+
+/* inside expand body */
+.expand-body p{font-size:14px;color:var(--muted);line-height:1.7;margin:14px 0 10px}
+.expand-body strong{color:var(--text)}
+.list-a{list-style:none;margin:10px 0 16px}
+.list-a li{
+  font-size:13.5px;color:var(--muted);padding:7px 0 7px 20px;
+  border-bottom:1px solid rgba(255,255,255,0.04);position:relative;line-height:1.55;
+}
+.list-a li:last-child{border-bottom:none}
+.list-a li::before{content:'›';position:absolute;left:0;color:var(--p3);font-size:15px;line-height:1.3}
+.list-a li strong{color:var(--text);font-weight:600}
+
+/* Example box */
+.eg{
+  background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.18);
+  border-radius:10px;padding:13px 16px;margin:10px 0;
+}
+.eg-label{font-size:10px;font-family:'Fira Code',monospace;color:var(--p3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.eg p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+
+/* name chips */
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.chip{
+  font-size:12px;padding:5px 12px;border-radius:50px;
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  color:var(--muted);white-space:nowrap;
+}
+.chip.green{background:var(--greenBg);border-color:var(--greenBd);color:#86EFAC}
+.chip.purple{background:rgba(124,58,237,0.1);border-color:rgba(124,58,237,0.25);color:var(--p4)}
+.chip.blue{background:rgba(96,165,250,0.1);border-color:rgba(96,165,250,0.25);color:#93C5FD}
+.chip.orange{background:rgba(251,146,60,0.1);border-color:rgba(251,146,60,0.25);color:#FED7AA}
+
+/* ─── CITY SECTION ─── */
+.city-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.city-block{background:var(--bg1);border:1px solid var(--border2);border-radius:14px;padding:22px}
+.city-block h4{font-size:14px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.city-block h4 span{
+  width:26px;height:26px;border-radius:7px;
+  background:linear-gradient(135deg,rgba(124,58,237,0.25),rgba(139,92,246,0.1));
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.city-block h4 span svg{width:14px;height:14px;stroke:var(--p4);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+
+/* ─── PHASE TABLE ─── */
+.phase-wrap{border:1px solid var(--border);border-radius:16px;overflow:hidden}
+.phase-head{display:grid;grid-template-columns:repeat(3,1fr);background:var(--bg2)}
+.phase-body{display:grid;grid-template-columns:repeat(3,1fr)}
+.phase-cell{padding:20px 22px;border-right:1px solid var(--border2)}
+.phase-cell:last-child{border-right:none}
+.phase-head .phase-cell{border-bottom:1px solid var(--border2)}
+.phase-badge{display:inline-block;font-size:10px;font-family:'Fira Code',monospace;font-weight:600;padding:4px 10px;border-radius:50px;margin-bottom:6px}
+.p1c .phase-badge{background:rgba(124,58,237,0.2);color:#A78BFA}
+.p2c .phase-badge{background:rgba(139,92,246,0.18);color:var(--p4)}
+.p3c .phase-badge{background:rgba(167,139,250,0.14);color:#DDD6FE}
+.phase-name{font-size:15px;font-weight:700}
+.phase-days{font-size:11px;color:var(--muted);font-family:'Fira Code',monospace;margin-top:2px}
+.phase-body .phase-cell{background:var(--bg1)}
+.p1c.phase-body .phase-cell:first-child,
+.p2c.phase-body .phase-cell:nth-child(2),
+.p3c.phase-body .phase-cell:last-child{}
+.milestone-list{list-style:none}
+.milestone-list li{font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.03);display:flex;gap:8px;align-items:flex-start;line-height:1.5}
+.milestone-list li:last-child{border-bottom:none}
+.milestone-list li::before{content:'✓';color:var(--green);font-size:11px;margin-top:2px;flex-shrink:0}
+
+/* ─── TIMELINE ─── */
+.tl{display:flex;flex-direction:column;gap:0;position:relative;padding-left:120px}
+.tl::before{content:'';position:absolute;left:80px;top:10px;bottom:10px;width:2px;background:linear-gradient(to bottom,var(--p1),var(--p2),rgba(139,92,246,0.1))}
+.tl-item{display:flex;gap:0;padding-bottom:28px;position:relative}
+.tl-badge{
+  position:absolute;left:-120px;width:110px;text-align:right;
+  font-family:'Fira Code',monospace;font-size:10.5px;font-weight:600;
+  color:var(--p3);padding-top:3px;letter-spacing:.04em;
+}
+.tl-dot{
+  position:absolute;left:-17px;width:18px;height:18px;border-radius:50%;z-index:1;
+  background:var(--bg);border:2px solid var(--p1);
+  display:flex;align-items:center;justify-content:center;margin-top:3px;
+}
+.tl-dot::after{content:'';width:7px;height:7px;border-radius:50%;background:var(--p2)}
+.tl-content{
+  flex:1;background:var(--bg1);border:1px solid var(--border2);
+  border-radius:12px;padding:18px 20px;transition:border-color 180ms;
+}
+.tl-content:hover{border-color:rgba(139,92,246,0.3)}
+.tl-title{font-size:13.5px;font-weight:700;color:var(--p4);margin-bottom:10px}
+.tl-content ul{list-style:none}
+.tl-content ul li{font-size:13px;color:var(--muted);padding:4px 0;display:flex;gap:8px;align-items:flex-start;line-height:1.55}
+.tl-content ul li::before{content:'·';color:var(--p2);font-size:18px;line-height:1;flex-shrink:0}
+
+/* ─── BUDGET TABLE ─── */
+.budget-table{width:100%;border-collapse:collapse;margin-top:4px}
+.budget-table th{
+  background:var(--bg2);font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--muted);padding:12px 16px;text-align:left;
+  border-bottom:1px solid var(--border2);
+}
+.budget-table td{
+  padding:12px 16px;font-size:13.5px;border-bottom:1px solid rgba(255,255,255,0.04);
+  vertical-align:top;
+}
+.budget-table tr:last-child td{border-bottom:none}
+.budget-table tr:hover td{background:rgba(255,255,255,0.02)}
+.budget-table .item{color:var(--text);font-weight:500}
+.budget-table .detail{color:var(--muted);font-size:12.5px;margin-top:2px}
+.budget-table .amt{font-family:'Fira Code',monospace;color:var(--yellow);white-space:nowrap}
+.budget-table .total-row td{background:rgba(124,58,237,0.07);border-top:1px solid rgba(124,58,237,0.2);font-weight:700}
+.budget-table .total-row .amt{color:var(--p4);font-size:15px}
+
+/* ─── RISK TABLE ─── */
+.risk-grid{display:flex;flex-direction:column;gap:12px}
+.risk-card{
+  background:var(--bg1);border:1px solid var(--border2);
+  border-radius:12px;padding:18px 20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;
+  transition:border-color 200ms;
+}
+.risk-card:hover{border-color:rgba(248,113,113,0.25)}
+.risk-left{}
+.risk-label-r{font-size:10px;font-family:'Fira Code',monospace;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.risk-label-m{font-size:10px;font-family:'Fira Code',monospace;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}
+.risk-title{font-size:14px;font-weight:700;margin-bottom:5px}
+.risk-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.risk-mit{
+  background:var(--greenBg);border:1px solid var(--greenBd);
+  border-radius:9px;padding:12px 14px;
+}
+.risk-mit p{font-size:13px;color:#A7F3D0;line-height:1.6;margin:0}
+
+/* ─── THEMES ─── */
+.theme-card{
+  background:linear-gradient(135deg,rgba(124,58,237,0.1),rgba(139,92,246,0.04));
+  border:1px solid rgba(124,58,237,0.22);
+  border-radius:14px;padding:26px;
+  transition:border-color 200ms,transform 200ms;cursor:default;
+}
+.theme-card:hover{border-color:rgba(139,92,246,0.45);transform:translateY(-2px)}
+.theme-n{font-size:40px;font-weight:800;color:rgba(139,92,246,0.18);line-height:1;margin-bottom:10px;letter-spacing:-.03em}
+.theme-card h3{font-size:16px;font-weight:700;margin-bottom:8px}
+.theme-card p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+/* ─── STRUGGLE CARDS ─── */
+.struggle-card{
+  background:var(--bg1);border:1px solid var(--redBd);
+  border-radius:14px;padding:22px;position:relative;overflow:hidden;
+  transition:border-color 200ms,transform 200ms;cursor:default;
+}
+.struggle-card:hover{border-color:rgba(248,113,113,0.4);transform:translateY(-2px)}
+.struggle-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(to bottom,var(--red),var(--orange));
+}
+.s-head{display:flex;align-items:flex-start;gap:12px;margin-bottom:12px}
+.s-icon{width:36px;height:36px;border-radius:9px;background:var(--redBg);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.s-icon svg{width:16px;height:16px;stroke:var(--red);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.struggle-card h3{font-size:14.5px;font-weight:700}
+.struggle-card .s-gap{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.mit-label{font-size:10px;font-family:'Fira Code',monospace;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px}
+.mit-box{background:var(--greenBg);border:1px solid var(--greenBd);border-radius:9px;padding:12px 14px}
+.mit-box p{font-size:13px;color:#A7F3D0;line-height:1.65;margin:0}
+
+/* ─── ANIMATIONS ─── */
+.fade{opacity:0;transform:translateY(20px);transition:opacity 450ms ease,transform 450ms ease}
+.fade.show{opacity:1;transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .city-grid{grid-template-columns:1fr}
+  .tl{padding-left:90px}
+  .tl::before{left:64px}
+  .risk-card{grid-template-columns:1fr}
+  .phase-head,.phase-body{grid-template-columns:1fr}
+  .phase-cell{border-right:none;border-bottom:1px solid var(--border2)}
+}
+@media(max-width:520px){
+  section{padding:56px 0}
+  .tl{padding-left:0}
+  .tl::before{display:none}
+  .tl-dot{display:none}
+  .tl-badge{position:static;width:auto;text-align:left;margin-bottom:6px}
+  .tl-item{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand mono">nimaya_ahmedabad.html</span>
+  <div class="nav-links">
+    <a onclick="scrollTo('report')">Report</a>
+    <a onclick="scrollTo('city')">City Intel</a>
+    <a onclick="scrollTo('partners')">Partners</a>
+    <a onclick="scrollTo('phases')">Phases</a>
+    <a onclick="scrollTo('timeline')">15-Day Plan</a>
+    <a onclick="scrollTo('budget')">Budget</a>
+    <a onclick="scrollTo('gaps')">Honest Gaps</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="tag" style="margin-bottom:28px"><span class="dot"></span> Interview Assignment — Project Lead, Ahmedabad</div>
+    <h1>From Vision to Ground:<br/>90-Day Launch Blueprint</h1>
+    <p class="hero-sub">A detailed program strategy to expand Nimaya's GenAI Ready Naari Program to Ahmedabad — with real names, real costs, and a clear action plan.</p>
+    <p class="hero-by mono">// Altaf Simavatwala &nbsp;·&nbsp; Project Lead Candidate &nbsp;·&nbsp; Ahmedabad</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-n">1,500+</div><div class="stat-l">Naaris to upskill<br/>across 2 cities</div></div>
+      <div class="stat"><div class="stat-n">40 hrs</div><div class="stat-l">Per batch — 32 offline<br/>+ 8 online</div></div>
+      <div class="stat"><div class="stat-n">90</div><div class="stat-l">Days to complete<br/>first batch</div></div>
+      <div class="stat"><div class="stat-n">₹3–5L</div><div class="stat-l">Estimated cost<br/>per batch of 40</div></div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- REPORT FRAMEWORK -->
+<section id="report">
+  <div class="container">
+    <p class="section-tag">// 01 — Report Framework</p>
+    <h2>10-Section Assignment Report</h2>
+    <p class="section-desc">Click any section to expand it. Each one covers what to write, what to include, and real Ahmedabad examples to make it concrete.</p>
+
+    <div class="fade">
+
+      <!-- 1 -->
+      <div class="expand-card open">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">01</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Mission Understanding</div>
+            <div class="expand-subtitle">Why this program exists and why it matters now</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Start by showing you understand the <strong>"why"</strong> before the "what." The goal is not just to teach ChatGPT — it is to make sure young women from low-income backgrounds are not left behind when AI transforms every job category.</p>
+          <ul class="list-a">
+            <li><strong>The problem in one line:</strong> 65% of entry-level jobs will be reshaped by AI by 2030. Women from underserved communities have the least access to AI skills, making them the most at risk.</li>
+            <li><strong>Nimaya's response:</strong> A free, 40-hour, hands-on program that does not just teach AI tools but builds real workplace confidence alongside technical ability.</li>
+            <li><strong>Scale already proven:</strong> 10,000+ Naaris across 5 states. Partners include IndiaAI (Government of India's Yuva AI Mission), Escorts Kubota (6,000+ Naaris), and Datamatics Business Solutions.</li>
+            <li><strong>Ashoka University connection:</strong> The Centre for Social and Behavioral Change (CSBC) is co-designing this expansion — meaning you have academic rigor and research backing, not just a training curriculum.</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">What to write in your report</div>
+            <p>Mention that Nimaya sits at the intersection of employability and AI readiness. Quote the partnership with IndiaAI as proof of national-level credibility. Then say: "Expanding to Ahmedabad makes strategic sense because Gujarat is India's industrial backbone — AI-ready women here will immediately enter a job market that needs them."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">02</span>
+          <div class="expand-title-block">
+            <div class="expand-title">City Context — Ahmedabad</div>
+            <div class="expand-subtitle">Who lives here, where they are, and why this city is ready</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Ahmedabad has a population of 8+ million. Around 20% live in approximately 710 slum pockets — mostly concentrated in the eastern and northern industrial corridors. These areas have a large population of 18–25 year old women who have completed school but have not found stable work.</p>
+          <ul class="list-a">
+            <li><strong>Key underserved zones to focus on:</strong> Bapunagar, Vatwa, Naroda, Odhav (east and north industrial belt). These areas have dense youth populations near existing NGO networks and ITI colleges.</li>
+            <li><strong>Why these areas:</strong> SAATH Charitable Trust has already been working in Ahmedabad slums since 1989 — their Women@Work program targets exactly the 18–25 age group from slum communities. Their network can be a pipeline, not a competitor.</li>
+            <li><strong>Language reality:</strong> Most target learners are Gujarati-speaking. Some Hindi. English is limited. The training materials need to be delivered in Gujarati/Hindi with English vocabulary introduced gradually. This is an advantage Altaf has over any outsider program manager.</li>
+            <li><strong>Family dynamics:</strong> In many households, the parents or husband need to give permission for a girl to attend training. Programs that run 9am–1pm (not evenings) and are based at a college (a trusted institution) see lower dropout. Keep this in mind when picking venues.</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">Example you can use in the report</div>
+            <p>"A 21-year-old woman in Bapunagar who completed her B.Com but cannot find work is the exact Naari we are designing for. She is smart, motivated, and living 3 km from Government Polytechnic for Girls on Ahmedabad-380015 — which is close enough to attend a morning batch without overnight travel."</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">03</span>
+          <div class="expand-title-block">
+            <div class="expand-title">90-Day Program Setup Plan</div>
+            <div class="expand-subtitle">Three phases with real milestones</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Break the first 90 days into three phases, each with a different focus. Think of it as: <strong>Phase 1 = build the foundation, Phase 2 = run and learn, Phase 3 = document and scale.</strong></p>
+          <ul class="list-a">
+            <li><strong>Phase 1 (Days 1–30):</strong> Sign MoUs with 3 colleges, hire a local assistant coordinator, lock venue, build enrollment pipeline. Deliverable: 60 enrolled candidates ready for screening.</li>
+            <li><strong>Phase 2 (Days 31–60):</strong> Select 40 Naaris, run orientation, deliver Batch 1 (32 offline hours). Deliverable: 40 Naaris completing 80%+ attendance with mid-batch assessment done.</li>
+            <li><strong>Phase 3 (Days 61–90):</strong> Complete Batch 1 (remaining 8 online hours), certification, placement/outcome tracking begins. Deliverable: Batch 1 impact report ready, Batch 2 enrollment open.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">04</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Partnership Strategy</div>
+            <div class="expand-subtitle">Who to approach, in what order, and how</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Partnerships are how you get learners (colleges and NGOs), funding (corporates), and credibility (government bodies). You need at least one from each tier before Batch 1 starts.</p>
+          <ul class="list-a">
+            <li><strong>Tier 1 — Learner Pipeline (Colleges/ITIs):</strong> Government Polytechnic for Girls, Ahmedabad (Nr. Atira, 380015), F.D. Arts &amp; Commerce College for Women, M.P. Arts and M.H. Commerce College for Women. These are large women-only institutions with placement cells and placement officers you can approach directly.</li>
+            <li><strong>Tier 2 — NGO Co-partners:</strong> SAATH Charitable Trust (saath.org) already runs Women@Work for 18–25 year olds from slums — exact same demographic. Manav Kartavya (Satellite area) does livelihood training. These orgs already have community trust; Nimaya's AI component is something they don't offer.</li>
+            <li><strong>Tier 3 — Corporate CSR:</strong> Adani Foundation runs women skill development through ASDC centers across Gujarat. Torrent Pharmaceuticals and Zydus Cadila both have strong CSR in Ahmedabad. Approach them for venue sponsorship, mentor access, or live project briefs (not cash first).</li>
+            <li><strong>Tier 4 — Government:</strong> Gujarat CSR Authority (gcsra.org) is a Government of Gujarat initiative that connects NGOs to corporate CSR. Register with them. Also approach the District Employment Exchange, Ahmedabad for co-branding the program.</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">How to approach a college (step by step)</div>
+            <p>Step 1: Email the Principal with a one-page overview. Step 2: Request a 20-minute meeting. Step 3: Bring a printed program brochure + 1 alumni story from an existing Nimaya batch. Step 4: Propose that Nimaya provides the training for free and the college provides a room and promotes it to students. Step 5: Sign a simple 1-page MoU within 2 weeks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">05</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Learner Selection Framework</div>
+            <div class="expand-subtitle">Who gets in, how you pick them, and how you keep them</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>The selection process is critical — too easy and you fill seats but lose quality. Too strict and you exclude the exact women who need the program most. Aim for motivated over qualified.</p>
+          <ul class="list-a">
+            <li><strong>Eligibility:</strong> Women aged 18–27, completed Class 10 minimum, based in or near Ahmedabad, not currently in full-time employment (or employed part-time and willing to attend morning batches). No prior tech knowledge needed.</li>
+            <li><strong>Selection in 3 steps:</strong> (1) Application form — basic info + "why do you want to join" in Gujarati. (2) Group information session — 30-minute session where you explain what the program involves. Anyone who shows up is already motivated. (3) Brief 1:1 conversation — not an interview, just to understand their current situation and flag dropout risk early.</li>
+            <li><strong>Dropout risk signals to watch for:</strong> Lives more than 8km away without personal transport, has a child below 3 years old without a care option, family member has expressed disapproval. These don't disqualify — they tell you who needs extra support.</li>
+            <li><strong>Retention tools:</strong> Peer buddy system (pair each new Naari with someone from the same area), WhatsApp group for the batch with daily engagement, mid-batch celebration (a small event at week 3 to mark progress).</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">Real example of dropout prevention</div>
+            <p>SAATH's Udaan program (which has placed 40,000+ youth from Ahmedabad slums) found that peer accountability groups cut dropout by 30%. Nimaya can replicate this by assigning a "batch buddy" on Day 1 and making buddy check-ins part of the daily routine.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">06</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Program Delivery Oversight</div>
+            <div class="expand-subtitle">What happens in the room, and how you ensure quality</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>The 40-hour curriculum covers: building chatbots, agentic AIs, AI-powered research, communication tactics, creative problem-solving, presentation skills, and real-world projects. Your job is not to teach — it is to make sure the trainer teaches it well, and the Naaris are actually learning.</p>
+          <ul class="list-a">
+            <li><strong>Trainer profile needed:</strong> Someone with hands-on experience with tools like ChatGPT, Gemini, Canva AI, Notion AI. Does not need to be an AI engineer — a working professional who uses AI daily is better than a theoretical teacher. Budget: ₹1,500–2,500 per training hour in Ahmedabad.</li>
+            <li><strong>Trainer sourcing options in Ahmedabad:</strong> LinkedIn search "AI trainer Ahmedabad", post on IIMA alumni groups, check freelance platforms like Toptal or Instahyre. Also check if CEPT University or Nirma University faculty have relevant profiles.</li>
+            <li><strong>Quality checks you run:</strong> (1) Attend first session of every new trainer to observe. (2) Run a 5-question quick quiz at the end of each week — not for grades, just to spot if concepts landed. (3) Collect written feedback from Naaris after every module (simple smiley scale + one text field).</li>
+            <li><strong>Live project component:</strong> Partner with a local business or startup to give Naaris a real brief. Example: A local kirana chain wants to know "how can we use AI for inventory reminders?" Naaris solve it in teams. This is the most powerful part of the program — real work builds real confidence.</li>
+            <li><strong>Mentor matching:</strong> Ask your corporate CSR partners (Adani, Torrent) to nominate 2–3 mid-level employees as mentors for the batch. One mentor per 10 Naaris. Schedule a 45-minute video call at week 3 and week 6.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">07</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Impact Tracking and Reporting</div>
+            <div class="expand-subtitle">What you measure, how, and for whom</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Impact tracking serves two purposes: (1) it tells you if the program is working, and (2) it gives Nimaya's central team and donors the proof they need to justify continued investment. Both matter equally.</p>
+          <ul class="list-a">
+            <li><strong>Quantitative metrics:</strong> Enrollment vs completion rate (target 80%+), attendance per session, pre/post assessment score improvement, number of AI tasks completed in final project, placement or internship conversion within 90 days of batch end.</li>
+            <li><strong>Qualitative metrics:</strong> Confidence self-assessment (simple 1–5 scale on "I can use AI at work" measured at start and end), trainer observation notes, 3 Naari stories per batch for donor reports.</li>
+            <li><strong>Your Google Sheets master tracker columns:</strong> Name, Age, Area (Bapunagar/Vatwa etc.), Education, College Partner, Attendance (Day 1–10), Quiz Score W1/W2/W3/W4, Confidence Pre/Post, Live Project Grade, Outcome (Placed/Internship/Continuing/Dropped).</li>
+            <li><strong>Reporting cadence:</strong> Weekly 15-min sync with central team (share tracker link, flag issues). Monthly 1-page PDF report to partner institutions. Quarterly impact snapshot for CSR partners with photos, quotes, and numbers.</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">One metric that impresses donors</div>
+            <p>Track "AI tool usage 30 days after program" — send a simple WhatsApp poll to all Batch 1 graduates 30 days later: "Did you use AI at work/study this month?" Yes/No + one example. This shows lasting impact, not just attendance.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">08</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Risk Register</div>
+            <div class="expand-subtitle">What can go wrong and what you will do about it</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>The fact that you can name risks before they happen is what separates a program manager from a program executor. Include this section to show maturity.</p>
+          <ul class="list-a">
+            <li><strong>Low enrollment:</strong> College partner pulls out or does not promote the program. Mitigation: Never rely on a single partner. Have 3 MoUs before Batch 1. If 1 pulls out, 2 remain.</li>
+            <li><strong>Trainer unavailability:</strong> Your main trainer gets sick or takes another offer mid-batch. Mitigation: Always onboard 1 backup trainer. Conduct a shadow session with the backup in Week 1.</li>
+            <li><strong>High dropout after Week 2:</strong> The most common dropout window in skill programs is Week 2–3. Mitigation: Intervene at first absence. Direct call from you (not WhatsApp) to the Naari or her family member within 24 hours of absence.</li>
+            <li><strong>Venue conflict:</strong> College decides to use the training room for exams. Mitigation: Always have a backup venue identified (e.g., a nearby community hall or NGO office). SAATH's Ahmedabad office or a Regus conference room at ₹5,000–8,000/day as last resort.</li>
+            <li><strong>Partner disengagement:</strong> A corporate CSR partner who promised mentors or a live project brief goes quiet. Mitigation: All commitments in writing before the batch starts. Follow up monthly — do not wait for them to disappear.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">09</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Budget Overview</div>
+            <div class="expand-subtitle">Realistic cost estimate per batch of 40 Naaris</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>Show you understand costs without overspending. The goal is to run a quality program at a realistic budget that can be funded by 1–2 CSR partners per batch.</p>
+          <ul class="list-a">
+            <li><strong>Venue (32 offline hours over 16 sessions x 2hrs):</strong> If through college MoU — free. If rented: ₹5,000–8,000/day x 8 days = ₹40,000–64,000. Aim for college MoU to keep this at zero.</li>
+            <li><strong>Trainer fees:</strong> ₹2,000/hr x 40 hrs = ₹80,000 per batch. Negotiate a lump-sum ₹75,000 for the full batch engagement.</li>
+            <li><strong>Training materials:</strong> Printed workbooks, pens, A4 paper, markers — ₹200/student x 40 = ₹8,000.</li>
+            <li><strong>Devices:</strong> If college provides laptops/desktops — free. If not, consider requesting 10 laptops from a CSR partner on loan. Do not buy unless budget exists.</li>
+            <li><strong>Coordinator cost (part-time local hire):</strong> ₹15,000/month x 3 months = ₹45,000 per batch cycle.</li>
+            <li><strong>Travel and field ops:</strong> Auto, Metro, petrol for Altaf's outreach and oversight — ₹5,000/month x 3 = ₹15,000.</li>
+            <li><strong>Contingency (10%):</strong> ₹20,000–25,000.</li>
+          </ul>
+          <div class="eg">
+            <div class="eg-label">Total per batch (best case vs realistic)</div>
+            <p>Best case (college venue free, devices borrowed): ₹1.7L–2L per batch. Realistic (venue rented + devices rented): ₹3L–3.5L per batch. Scale to 5 batches/year = ₹12L–17L annual Ahmedabad budget — well within the range of a single mid-size CSR grant from Adani Foundation or Torrent.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="expand-card">
+        <div class="expand-header" onclick="toggleExpand(this)">
+          <span class="expand-num">10</span>
+          <div class="expand-title-block">
+            <div class="expand-title">Why I Am the Right Person</div>
+            <div class="expand-subtitle">The case for Altaf as Project Lead, Ahmedabad</div>
+          </div>
+          <div class="expand-arrow"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+        </div>
+        <div class="expand-body">
+          <p>This is your closing argument. Do not be shy here. Make the case directly.</p>
+          <ul class="list-a">
+            <li><strong>Local advantage:</strong> I live in Ahmedabad. I know Bapunagar from Satellite. I know which areas have good college infrastructure and which need a rented venue. No onboarding time needed.</li>
+            <li><strong>Language:</strong> Gujarati is my first language. Building trust with local college principals, NGO staff, and Naari families is 10x easier when you speak their language. This is not a small thing.</li>
+            <li><strong>Stakeholder management (15 years):</strong> Managing 10+ client accounts across US Healthcare at Advantmed — each with different teams, reporting requirements, and expectations — is the same skill as managing college partners, CSR sponsors, and a central Nimaya team simultaneously.</li>
+            <li><strong>System building:</strong> As Product Owner and APM, I have built trackers, SOPs, and dashboards from scratch. The Google Sheets master tracker for this program will be ready on Day 1, not Day 30.</li>
+            <li><strong>Available now:</strong> Can start immediately. No notice period complications.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /fade -->
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- CITY INTEL -->
+<section id="city">
+  <div class="container">
+    <p class="section-tag">// 02 — Ahmedabad Intelligence</p>
+    <h2>Know the Ground Before You Touch It</h2>
+    <p class="section-desc">Real areas, real institutions, and real community context to put in your report and use on Day 1.</p>
+
+    <div class="city-grid fade">
+
+      <div class="city-block">
+        <h4>
+          <span><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          Priority Areas to Target
+        </h4>
+        <ul class="list-a">
+          <li><strong>Bapunagar</strong> — eastern belt, large working-class population, high density of women who completed school but not college</li>
+          <li><strong>Vatwa &amp; Odhav</strong> — GIDC industrial zones, underserved youth near factories, poor AI exposure</li>
+          <li><strong>Naroda</strong> — north Ahmedabad, large youth population, several ITIs and community colleges nearby</li>
+          <li><strong>Asarwa &amp; Shahibaug</strong> — close to Government Polytechnic for Girls, easier commute for enrolled Naaris</li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">Why east/north Ahmedabad</div>
+          <p>Approximately 250,000 people live in 710+ slum pockets in Ahmedabad — mostly in the industrial east and north. These areas also have the highest density of women's colleges and NGO networks, making outreach easier.</p>
+        </div>
+      </div>
+
+      <div class="city-block">
+        <h4>
+          <span><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>
+          Women's Colleges to Approach
+        </h4>
+        <ul class="list-a">
+          <li><strong>Government Polytechnic for Girls, Ahmedabad</strong> — Nr. Atira, Ahmedabad-380015. 7 diploma programs, hostel available. Best first call.</li>
+          <li><strong>F.D. Arts &amp; Commerce College for Women</strong> — Gujarat University affiliated. Strong placement cell.</li>
+          <li><strong>M.P. Arts and M.H. Commerce College for Women</strong> — Since 1969, large intake, central location.</li>
+          <li><strong>Umiya Arts and Commerce College for Girls</strong> — B.Com/M.Com focus, good for commerce-to-AI transition learners.</li>
+          <li><strong>S.L.U. Arts and H.P.T. Commerce College for Women</strong> — Ellisbridge, Ahmedabad, accessible location.</li>
+        </ul>
+      </div>
+
+      <div class="city-block">
+        <h4>
+          <span><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          NGOs to Partner With
+        </h4>
+        <ul class="list-a">
+          <li><strong>SAATH Charitable Trust</strong> (saath.org) — Since 1989, runs Women@Work (18–25 yr, slum communities), Udaan (54,000+ youth placed). They are the most relevant co-partner in Ahmedabad.</li>
+          <li><strong>Manav Kartavya</strong> (manavkartavya.org) — Women's livelihood training in Satellite area. Existing community trust.</li>
+          <li><strong>Swa Sarjan Foundation</strong> — Youth and women empowerment, Ahmedabad. Good for co-mobilization.</li>
+          <li><strong>Human Development &amp; Research Foundation</strong> — Skill training and women's development. Based in Ahmedabad.</li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">Partnership pitch to SAATH</div>
+          <p>"SAATH already reaches the right women. Nimaya brings the AI curriculum SAATH doesn't have. Together: SAATH provides the mobilization, Nimaya provides the training, both get the impact numbers." A pure win-win framing.</p>
+        </div>
+      </div>
+
+      <div class="city-block">
+        <h4>
+          <span><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span>
+          Corporate CSR Partners to Approach
+        </h4>
+        <ul class="list-a">
+          <li><strong>Adani Foundation</strong> (adanifoundation.org) — Runs "S.H.E" women's empowerment framework + Adani Skill Development Centres (ASDC) across Gujarat. Approach for co-branding, devices, or mentors.</li>
+          <li><strong>Torrent Pharmaceuticals</strong> — Large CSR budget, Ahmedabad-headquartered, strong in education and women's health.</li>
+          <li><strong>Zydus Cadila / Zydus Foundation</strong> — Based in Ahmedabad. CSR focus on rural and underserved communities in Gujarat.</li>
+          <li><strong>Nirma Limited</strong> — Ahmedabad company with active CSR in education and livelihood.</li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">What to ask them for (not cash first)</div>
+          <p>First ask: Can you nominate 2 employees as mentors for our batch? Or: Can you give us a real business problem for our Naaris to solve as a live project? Cash ask comes in Month 3 after you have results to show.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PARTNERS MAP -->
+<section id="partners">
+  <div class="container">
+    <p class="section-tag">// 03 — Partner Ecosystem</p>
+    <h2>Real Names, Real Roles</h2>
+    <p class="section-desc">All organizations mapped by what they bring to the program — so you know exactly who to call for what.</p>
+
+    <div class="fade" style="display:flex;flex-direction:column;gap:20px">
+
+      <div style="background:var(--bg1);border:1px solid var(--border2);border-radius:14px;padding:22px">
+        <div style="font-size:11px;font-family:'Fira Code',monospace;color:var(--green);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">Learner Pipeline — Where Naaris Come From</div>
+        <div class="chips">
+          <span class="chip green">Govt Polytechnic for Girls, Ahmedabad</span>
+          <span class="chip green">F.D. Arts &amp; Commerce College for Women</span>
+          <span class="chip green">M.P. Arts &amp; M.H. Commerce College for Women</span>
+          <span class="chip green">Umiya Arts and Commerce College for Girls</span>
+          <span class="chip green">SAATH Charitable Trust (Udaan pipeline)</span>
+          <span class="chip green">Manav Kartavya (Satellite area)</span>
+          <span class="chip green">Swa Sarjan Foundation</span>
+        </div>
+      </div>
+
+      <div style="background:var(--bg1);border:1px solid var(--border2);border-radius:14px;padding:22px">
+        <div style="font-size:11px;font-family:'Fira Code',monospace;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">Mentors and Live Projects — Industry Connect</div>
+        <div class="chips">
+          <span class="chip blue">Adani Foundation (S.H.E. Framework)</span>
+          <span class="chip blue">Torrent Pharmaceuticals CSR</span>
+          <span class="chip blue">Zydus Foundation, Ahmedabad</span>
+          <span class="chip blue">Nirma Limited</span>
+          <span class="chip blue">Datamatics Business Solutions (existing Nimaya partner)</span>
+          <span class="chip blue">Escorts Kubota (existing Nimaya partner — 6000+ Naaris)</span>
+        </div>
+      </div>
+
+      <div style="background:var(--bg1);border:1px solid var(--border2);border-radius:14px;padding:22px">
+        <div style="font-size:11px;font-family:'Fira Code',monospace;color:var(--p4);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">Curriculum and Academic Support</div>
+        <div class="chips">
+          <span class="chip purple">Ashoka University — CSBC (programme design partner)</span>
+          <span class="chip purple">IndiaAI / Yuva AI Mission (national co-brand)</span>
+          <span class="chip purple">CEPT University, Ahmedabad (local faculty for trainers)</span>
+          <span class="chip purple">Nirma University (tech talent for trainer bench)</span>
+        </div>
+      </div>
+
+      <div style="background:var(--bg1);border:1px solid var(--border2);border-radius:14px;padding:22px">
+        <div style="font-size:11px;font-family:'Fira Code',monospace;color:var(--orange);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px">Government and Compliance Backing</div>
+        <div class="chips">
+          <span class="chip orange">Gujarat CSR Authority — gcsra.org</span>
+          <span class="chip orange">District Employment Exchange, Ahmedabad</span>
+          <span class="chip orange">Gujarat Technological University (GTU) — institutional credibility</span>
+          <span class="chip orange">Ministry of Skill Development (MSDE) — national linkage via IndiaAI</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- PHASES -->
+<section id="phases">
+  <div class="container">
+    <p class="section-tag">// 04 — 90-Day Execution Plan</p>
+    <h2>Three Phases, Clear Milestones</h2>
+    <p class="section-desc">Each phase has a different job. Phase 1 is about building trust with institutions. Phase 2 is about delivering. Phase 3 is about learning and scaling.</p>
+
+    <div class="phase-wrap fade">
+      <div class="phase-head">
+        <div class="phase-cell p1c">
+          <div class="phase-badge">Phase 1</div>
+          <div class="phase-name">Foundation</div>
+          <div class="phase-days">Days 01 — 30</div>
+        </div>
+        <div class="phase-cell p2c">
+          <div class="phase-badge">Phase 2</div>
+          <div class="phase-name">First Batch</div>
+          <div class="phase-days">Days 31 — 60</div>
+        </div>
+        <div class="phase-cell p3c">
+          <div class="phase-badge">Phase 3</div>
+          <div class="phase-name">Systems</div>
+          <div class="phase-days">Days 61 — 90</div>
+        </div>
+      </div>
+      <div class="phase-body">
+        <div class="phase-cell p1c">
+          <ul class="milestone-list">
+            <li>Visit Govt Polytechnic for Girls, F.D. College, and M.P. College — meetings with Principals</li>
+            <li>Sign MoUs with minimum 3 institutions</li>
+            <li>Connect with SAATH Charitable Trust for co-mobilization</li>
+            <li>Identify and contract lead trainer (₹75K lump sum)</li>
+            <li>Onboard backup trainer (shadow session arranged)</li>
+            <li>Lock training venue (college room preferred — free)</li>
+            <li>Build Google Sheets master tracker</li>
+            <li>Launch enrollment — target 80 applicants for 40 seats</li>
+            <li>First outreach to Adani Foundation CSR team</li>
+          </ul>
+        </div>
+        <div class="phase-cell p2c">
+          <ul class="milestone-list">
+            <li>Screen 80 applicants — select 40 Naaris</li>
+            <li>Run Orientation Day — explain program, collect consent forms</li>
+            <li>Batch 1 Week 1: Fundamentals of AI (4 sessions x 2hr)</li>
+            <li>Week 2: Creating with AI — ChatGPT, Canva AI, Gemini</li>
+            <li>Week 3: Workplace skills + AI for research and writing</li>
+            <li>Mid-batch assessment + buddy check-ins (Week 3)</li>
+            <li>Week 4: Real-world project briefed by a local business partner</li>
+            <li>First mentor session with corporate partner</li>
+            <li>Attendance drops tracked — personal follow-up calls same day</li>
+          </ul>
+        </div>
+        <div class="phase-cell p3c">
+          <ul class="milestone-list">
+            <li>8 online hours completed (Weeks 5–6, flexible timing)</li>
+            <li>Live project presentations — invite partner mentors to attend</li>
+            <li>Certification ceremony — photo documentation for reports</li>
+            <li>Post-program 30-day follow-up poll scheduled (WhatsApp)</li>
+            <li>Batch 1 impact report drafted (completion rate, quiz scores, confidence change)</li>
+            <li>Retrospective with central team — what changed, what repeated</li>
+            <li>Batch 2 enrollment opens with learnings applied</li>
+            <li>Quarterly CSR partner report sent to Adani, Torrent</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- 15-DAY TIMELINE -->
+<section id="timeline">
+  <div class="container">
+    <p class="section-tag">// 05 — Pre-Start Momentum</p>
+    <h2>15-Day Action Plan</h2>
+    <p class="section-desc">What you will do before your first official week is over. This proves ownership, not just intent. These 15 days are entirely within your control before the program even formally begins.</p>
+
+    <div class="tl fade">
+
+      <div class="tl-item">
+        <div class="tl-badge">DAY 01–03</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">Deep Immersion — Know the Program Inside Out</div>
+          <ul>
+            <li>Watch all Nimaya YouTube content, read every press article, study the GenAI Ready Naari curriculum module by module</li>
+            <li>Map Ahmedabad's college and NGO ecosystem in a Google Sheet — name, contact person, phone, area, student count</li>
+            <li>List 20 specific institutions to approach in Month 1 (use the names in this document as starting point)</li>
+            <li>Read SAATH's Women@Work and Udaan program documentation — understand their learner profile to compare with Nimaya's</li>
+            <li>Outcome: You can speak about the curriculum and city landscape confidently on Day 4</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-badge">DAY 04–06</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">Network Activation — Warm Calls, Not Cold Emails</div>
+          <ul>
+            <li>Call or WhatsApp 3 college placement officers you know personally (or through a mutual contact) — explain what Nimaya is doing, ask for a 20-minute meeting</li>
+            <li>Reach out to anyone in your professional network who works at Adani Foundation, Torrent Pharma, or Zydus — even a LinkedIn connection is a warm intro</li>
+            <li>Find SAATH Charitable Trust's current program coordinator on LinkedIn — send a connection request with a note about Nimaya</li>
+            <li>Identify 2–3 GenAI trainers in Ahmedabad through LinkedIn ("AI trainer Ahmedabad" search) or CEPT/Nirma University networks</li>
+            <li>Outcome: At least 3 meeting confirmations and 2 trainer profiles in hand by Day 6</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-badge">DAY 07–09</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">Outreach Toolkit — Materials Ready to Go</div>
+          <ul>
+            <li>Draft a 1-page partnership pitch in Gujarati and English — what Nimaya is, what you offer the college (free training, impact report, co-branded certificate), what you need from them (a room, student promotion)</li>
+            <li>Create an FAQ document: "What happens to my students after?" "Is it really free?" "How many hours per week?" — answer 10 common objections a Principal will raise</li>
+            <li>Build a simple learner application form on Google Forms (name, age, area, education, "why do you want to join" in Gujarati)</li>
+            <li>Outcome: Ready to send or hand over the partnership pitch at the meetings you set up in Days 4–6</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-badge">DAY 10–12</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">Logistics Groundwork — Venues, Trainers, Devices</div>
+          <ul>
+            <li>Visit Govt Polytechnic for Girls (Nr. Atira, 380015) in person — request a room tour, ask about available slots for external programs, get the contact of the person who signs external MOUs</li>
+            <li>Get quotes from 2 backup venues: a local community hall and a Regus/Awfis conference room (Awfis has Ahmedabad offices — awfis.com)</li>
+            <li>Shortlist 2 trainers — brief them on the curriculum, ask for a sample 30-minute demo session</li>
+            <li>Check if any college partner has a computer lab they can share for sessions requiring devices</li>
+            <li>Outcome: 1 confirmed venue option, 1 trainer shortlisted with a demo date</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-badge">DAY 13–15</div>
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-title">Reporting Infrastructure — The System That Runs the Program</div>
+          <ul>
+            <li>Build the Google Sheets master tracker: tabs for Learners, Attendance, Assessments, Partners, Budget, Weekly Report</li>
+            <li>Draft a 90-day milestone calendar in Google Sheets — one row per week, key deliverable, owner, status</li>
+            <li>Write a 1-page "Ahmedabad Launch Snapshot" — current status, first 3 institutions approached, trainer shortlist, venue option, enrollment plan — for your first sync with the central Nimaya team</li>
+            <li>Set up a WhatsApp group structure: one for partner institutions, one for the batch Naaris (once enrolled), one for central team coordination</li>
+            <li>Outcome: Walk into Day 16 with a working system, a confirmed first meeting, and a document to show the central team</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- BUDGET -->
+<section id="budget">
+  <div class="container">
+    <p class="section-tag">// 06 — Cost Estimation</p>
+    <h2>Budget Per Batch of 40 Naaris</h2>
+    <p class="section-desc">Based on Ahmedabad market rates. Two scenarios: best case (college partner provides venue and devices) and realistic (rented venue, no device support).</p>
+
+    <div class="fade">
+    <div style="background:var(--bg1);border:1px solid var(--border2);border-radius:14px;overflow:hidden">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th style="width:30%">Item</th>
+            <th style="width:30%">How It Breaks Down</th>
+            <th style="width:20%">Best Case</th>
+            <th style="width:20%">Realistic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="item">Venue (32 offline hrs)</div><div class="detail">16 sessions x 2 hrs each</div></td>
+            <td style="font-size:13px;color:var(--muted)">College MoU = free. Rental = ₹5,000–8,000/day x 8 days</td>
+            <td><div class="amt">₹ 0</div></td>
+            <td><div class="amt">₹ 40–64K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Lead Trainer Fees</div><div class="detail">40 hours total delivery</div></td>
+            <td style="font-size:13px;color:var(--muted)">₹1,500–2,500/hr in Ahmedabad. Lump-sum negotiated at ₹75K</td>
+            <td><div class="amt">₹ 60K</div></td>
+            <td><div class="amt">₹ 75K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Backup Trainer (shadow fee)</div><div class="detail">2 shadow sessions + standby</div></td>
+            <td style="font-size:13px;color:var(--muted)">₹5,000 one-time for onboarding + standby availability</td>
+            <td><div class="amt">₹ 5K</div></td>
+            <td><div class="amt">₹ 5K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Training Materials</div><div class="detail">40 Naaris</div></td>
+            <td style="font-size:13px;color:var(--muted)">Printed workbook, notebook, pen, folder — ₹200/student x 40</td>
+            <td><div class="amt">₹ 8K</div></td>
+            <td><div class="amt">₹ 8K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Devices / Laptops</div><div class="detail">1 device per 2 Naaris = 20 needed</div></td>
+            <td style="font-size:13px;color:var(--muted)">College computer lab = free. Rental: ₹500/device/day x 8 days x 20 devices</td>
+            <td><div class="amt">₹ 0</div></td>
+            <td><div class="amt">₹ 80K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Local Coordinator</div><div class="detail">Part-time hire for 3 months</div></td>
+            <td style="font-size:13px;color:var(--muted)">₹15,000/month x 3 months. Fresh graduate, coordination background</td>
+            <td><div class="amt">₹ 45K</div></td>
+            <td><div class="amt">₹ 45K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Travel and Field Ops</div><div class="detail">Project Lead's Ahmedabad travel</div></td>
+            <td style="font-size:13px;color:var(--muted)">Auto, Metro, occasional Ola for outreach, oversight, partner visits</td>
+            <td><div class="amt">₹ 12K</div></td>
+            <td><div class="amt">₹ 15K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Printing and Comms</div><div class="detail">Certificates, banners, flyers</div></td>
+            <td style="font-size:13px;color:var(--muted)">Certificate printing, 1 backdrop banner, batch flyers for college notice boards</td>
+            <td><div class="amt">₹ 6K</div></td>
+            <td><div class="amt">₹ 8K</div></td>
+          </tr>
+          <tr>
+            <td><div class="item">Contingency (10%)</div><div class="detail">Unplanned costs</div></td>
+            <td style="font-size:13px;color:var(--muted)">Standard buffer for field programs</td>
+            <td><div class="amt">₹ 15K</div></td>
+            <td><div class="amt">₹ 30K</div></td>
+          </tr>
+          <tr class="total-row">
+            <td><div class="item">Total Per Batch</div></td>
+            <td style="font-size:13px;color:var(--muted)">40 Naaris, 40 hours, full delivery</td>
+            <td><div class="amt">~ ₹ 1.5L</div></td>
+            <td><div class="amt">~ ₹ 3.2L</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+      <div class="eg">
+        <div class="eg-label">Annual Ahmedabad Budget (5 batches)</div>
+        <p>Best case: ₹7.5L/year. Realistic: ₹16L/year. A single mid-size CSR grant from Adani Foundation (which runs skill centers across Gujarat) or Torrent Pharmaceuticals can fund 2–3 batches. Apply to Gujarat CSR Authority (gcsra.org) to get listed in their CSR matchmaking platform.</p>
+      </div>
+      <div class="eg">
+        <div class="eg-label">Cost per Naari</div>
+        <p>Best case: ₹3,750 per Naari. Realistic: ₹8,000 per Naari. For context, government skill programs like DDU-GKY cost ₹15,000–25,000 per candidate. Nimaya delivers at roughly a third of the government cost — a strong pitch to any CSR team.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- KEY THEMES -->
+<section id="themes">
+  <div class="container">
+    <p class="section-tag">// 07 — Strategic Threads</p>
+    <h2>Four Themes to Carry Through Everything</h2>
+    <p class="section-desc">These are not just nice phrases. Each one should be visible in how you write your report, how you present your plan, and how you answer questions in the interview.</p>
+
+    <div class="grid-2 fade">
+      <div class="theme-card">
+        <div class="theme-n">01</div>
+        <h3>Speed With Structure</h3>
+        <p>You can move fast without building something fragile. Your 15 years of project and product management means you create a tracker, an SOP, and a milestone calendar before problems appear — not after. The 15-day action plan in this document is the proof. By Day 15, you have a working system. Not a plan to build a plan.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-n">02</div>
+        <h3>Ground-Level Empathy</h3>
+        <p>You live in Ahmedabad. You speak Gujarati. You know Bapunagar is very different from Satellite. You understand that a college principal in Asarwa responds to respect and relationships, not slide decks. This is not a credential — it is a real operational advantage that no visiting project manager can replicate.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-n">03</div>
+        <h3>Accountability Without Reminders</h3>
+        <p>You track, document, and flag problems early rather than firefighting them late. From managing 10+ US Healthcare client accounts simultaneously at Advantmed, you know that surprises are a planning failure, not bad luck. The same discipline applies here: weekly reports, early dropout flags, and documented partner commitments.</p>
+      </div>
+      <div class="theme-card">
+        <div class="theme-n">04</div>
+        <h3>Scale Through Systems</h3>
+        <p>Getting from Batch 1 to Batch 10 to 1,500 Naaris is not about working harder — it is about building processes that run without you. The enrollment funnel, the delivery checklist, the impact dashboard, the trainer onboarding SOP — these need to work even when you are on the ground in Batch 2 and someone else is managing Batch 3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- HONEST GAPS -->
+<section id="gaps">
+  <div class="container">
+    <p class="section-tag">// 08 — Honest Self-Assessment</p>
+    <h2>Where You Might Struggle</h2>
+    <p class="section-desc">Naming your gaps honestly — with a clear plan to close each one — is what separates a self-aware leader from an overconfident candidate. Include this in your submission. It builds trust.</p>
+
+    <div class="grid-2 fade">
+
+      <div class="struggle-card">
+        <div class="s-head">
+          <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <h3>New to the Development Sector</h3>
+        </div>
+        <p class="s-gap">No prior nonprofit or social sector experience. Corporate project management and social impact program management are different disciplines. Donor language, impact framing, compliance standards, and the pace of NGO work are all unfamiliar. This is real and worth naming.</p>
+        <div class="mit-label">How I will close this gap</div>
+        <div class="mit-box"><p>Shadow the central Nimaya team for the first 4 weeks — attend every meeting, read every report, ask every "why do we do it this way" question. Study SAATH's program documentation to understand how Ahmedabad's best social programs operate. Use Ashoka CSBC's frameworks as a guide, not just a credential.</p></div>
+      </div>
+
+      <div class="struggle-card">
+        <div class="s-head">
+          <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <h3>No Existing Field Network in Slum Communities</h3>
+        </div>
+        <p class="s-gap">Professional network is corporate — US Healthcare, data accounts, product teams. That network does not overlap with the communities we want to reach in Bapunagar or Vatwa. Community trust in underserved areas is earned slowly, not imported from a LinkedIn profile.</p>
+        <div class="mit-label">How I will close this gap</div>
+        <div class="mit-box"><p>Start through institutions already trusted by the community — SAATH, Manav Kartavya, Government Polytechnic for Girls. Let credible intermediaries introduce the program. Attend community events (college orientation days, local NGO gatherings) before formally pitching. Trust the institution to build trust with the community first.</p></div>
+      </div>
+
+      <div class="struggle-card">
+        <div class="s-head">
+          <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 0 3-3h7z"/></svg></div>
+          <h3>No Formal EdTech or Curriculum Background</h3>
+        </div>
+        <p class="s-gap">Evaluating whether a 40-hour AI curriculum is actually building skills — versus just filling time — requires pedagogical instincts that come from experience in learning design. Knowing if a trainer is good, not just likeable, is a different skill than knowing if a client account is healthy.</p>
+        <div class="mit-label">How I will close this gap</div>
+        <div class="mit-box"><p>Use Nimaya's existing quality rubrics and Ashoka CSBC frameworks — I don't need to invent assessment methods, I need to implement them well. Attend 2 full sessions at an existing Nimaya batch city before running Ahmedabad independently. Focus on data: pre/post assessment scores tell me if learning happened, not my gut feeling about the trainer.</p></div>
+      </div>
+
+      <div class="struggle-card">
+        <div class="s-head">
+          <div class="s-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <h3>Corporate Clarity vs. Field Ambiguity</h3>
+        </div>
+        <p class="s-gap">15 years in an environment with defined SLAs, escalation paths, and process documentation. Field program management means a venue cancels the morning of a session, a trainer goes silent on WhatsApp, or a Naari stops attending without explanation. There is no ticket system for this.</p>
+        <div class="mit-label">How I will close this gap</div>
+        <div class="mit-box"><p>Build minimum viable structures early and iterate weekly. Keep a "blockers and assumptions" log — flag ambiguity as a data point, not a failure. Reframe: ambiguity is what makes this role valuable for someone with a structured background. The ability to bring structure to chaos is exactly what ground-level programs lack most.</p></div>
+      </div>
+
+      <div class="struggle-card">
+        <div class="s-head">
+          <div class="s-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <h3>Learner Dropout is Emotionally Complex</h3>
+        </div>
+        <p class="s-gap">When a Naari stops attending, the reason is usually not laziness — it is family pressure, a sick parent, financial stress, or feeling out of place in a room full of people who seem more confident. Managing dropout requires empathy first and operations second. No prior experience with this kind of human complexity at scale.</p>
+        <div class="mit-label">How I will close this gap</div>
+        <div class="mit-box"><p>Proactively address barriers at the enrollment stage — identify at-risk Naaris in the selection conversation, not after they drop. Build peer buddy accountability into Day 1. Learn from SAATH's Udaan program: they cut dropout by 30% using peer groups in Ahmedabad's slum communities. Call on first absence — not WhatsApp. A personal call within 24 hours of the first miss is the single most effective retention intervention known in field programs.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="divider"></div>
+
+<!-- FOOTER -->
+<footer style="padding:44px 0;text-align:center;border-top:1px solid var(--border2)">
+  <div class="container">
+    <p style="font-size:13px;color:var(--dim)">
+      Prepared by <span style="color:var(--p4);font-weight:600">Altaf Simavatwala</span>
+      &nbsp;·&nbsp; Project Lead Candidate
+      &nbsp;·&nbsp; Nimaya Foundation — Ahmedabad
+    </p>
+    <p style="font-size:12px;color:var(--dim);margin-top:6px">GenAI Ready Naari Program &nbsp;·&nbsp; 90-Day Launch Blueprint &nbsp;·&nbsp; 2026</p>
+    <p style="font-size:11px;color:var(--dim);margin-top:12px;opacity:.6">Research sources: saath.org · adanifoundation.org · nimaya.in · gcsra.org · ggpa.cteguj.in · csrbox.org</p>
+  </div>
+</footer>
+
+<script>
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+function toggleExpand(header){
+  const card = header.closest('.expand-card');
+  card.classList.toggle('open');
+}
+
+// Intersection observer for fade-in
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target)}
+  });
+},{threshold:0.06});
+document.querySelectorAll('.fade').forEach((el,i)=>{
+  el.style.transitionDelay = `${i*40}ms`;
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
